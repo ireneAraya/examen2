@@ -56,7 +56,7 @@ class GamesService {
 		return $response;
 	}
 
-	public function list($page = 1) {
+	public function listado($page = 1) {
 		$response = [];
 		$pageSize = 10;
 		$page = $page == 0 ? 1 : intval($page);

@@ -9,7 +9,7 @@ namespace App\Controllers;
 use App\Services\GamesService;
 use Slim\Http\Request;
 
-class ContactosController {
+class GamesController {
 	private $gamesService;
 
 	/**
@@ -17,6 +17,10 @@ class ContactosController {
 	*/
 	public function __construct() {
 		$this-> gamesService = new GamesService();
+	}
+
+	public function listado() {
+		return "hola";
 	}
 
 	/**

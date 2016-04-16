@@ -7,27 +7,36 @@
 
 require "bootstrap.php";
 
-//use App\Controllers\GamesController;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
-$app = new \Slim\App();
+$slimApp = new \Slim\App();
 
 // Definimos nuestras rutas
 
-// Lista de juegos
-$app->get(
-    "/games[/{page}]",
+$slimApp->get(
+    "/game",
     function ($request, $response) {
         /** @var Response $response */
         $controller = new App\Controllers\GamesController();
-        $result = $controller->list($request);
+        $result = $controller->listado($request);
+        return $response->withJson($result);
+    }
+);
+
+// Lista de juegos
+$slimApp->get(
+    "/games[/{page}]",
+    function ($request, $response) {
+        /** @var Response $response */
+        $controller = new \App\Controllers\GamesController();
+        $result = $controller->listado($request);
         return $response->withJson($result);
     }
 );
 
 // Una entrada específica
-$app->get(
+$slimApp->get(
     "/game/{id}",
     function ($request, $response) {
         /** @var Response $response */
@@ -38,7 +47,7 @@ $app->get(
 );
 
 // Crear nuevos juegos
-$app->post(
+$slimApp->post(
     "/game/add",
     function ($request, $response) {
         /** @var Response $response */
@@ -49,7 +58,7 @@ $app->post(
 );
 
 // Editar un juego
-$app->post(
+$slimApp->post(
     "/game/update/{id}",
     function ($request, $response) {
         /** @var Response $response */
@@ -60,7 +69,7 @@ $app->post(
 );
 
 // Eliminar un juego
-$app->get(
+$slimApp->get(
     "/game/delete/{id}",
     function ($request, $response) {
         /** @var Response $response */
@@ -71,4 +80,4 @@ $app->get(
 );
 
 // Corremos la aplicación.
-$app->run();
+$slimApp->run();
