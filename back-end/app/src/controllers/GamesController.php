@@ -20,7 +20,7 @@ class GamesController {
 	}
 
 	public function listado() {
-		return "hola";
+		return;
 	}
 
 	/**
