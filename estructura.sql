@@ -1,15 +1,12 @@
-# use contactdb;
-
-# Creamos nuestra tabla de usuarios
-CREATE TABLE contactos(
+CREATE TABLE videogames(
   id INT NOT NULL AUTO_INCREMENT,
-  title VARCHAR(45) NOT NULL,
-  developer VARCHAR(45) NOT NULL,
-  description VARCHAR(200) NOT NULL,
-  console VARCHAR(45) NOT NULL,
-  date VARCHAR(10) NOT NULL,
-  rating FLOAT(5),
-  url VARCHAR(70),
-
-  PRIMARY KEY (id)
+  title VARCHAR(255),
+  developer VARCHAR(255),
+  description VARCHAR(255),
+  console VARCHAR(255),
+  date VARCHAR(255),
+  rating VARCHAR(255),
+  url VARCHAR(255),
+  PRIMARY KEY (id),
+  UNIQUE KEY `id_UNIQUE` (`id`)
 );

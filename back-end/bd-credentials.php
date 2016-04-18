@@ -4,8 +4,8 @@
 // Ingrese sus credenciales en este archivo, serán leidas y usadas por el `PersistenciaService`.
 
 $config = [
-    "db_host" => "127.0.0.1",
-    "db_name" => "games",
+    "db_host" => "localhost",
+    "db_name" => "pr1db",
     "db_user" => "pr1usuario",
     "db_pass" => "pr1password"
 ];

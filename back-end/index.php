@@ -73,7 +73,7 @@ $slimApp->get(
     "/game/delete/{id}",
     function ($request, $response) {
         /** @var Response $response */
-        $controller = new App\Controllers\ContactosController();
+        $controller = new App\Controllers\GamesController();
         $result = $controller->delete($request);
         return $response->withJson($result);
     }
